@@ -31,3 +31,22 @@ Some ideas for bugs:
 -	Wrong end stack 
 -	Underflowing stack
 -	Double delimiter
+
+## rpn\_calc
+
+Usage:
+```
+python rpn\_calc.py
+```
+It will read from `stdin` breaking the input into space-separated tokens.  The
+tokens are currently `"+", "-", "*", "/", "p"`.  The "p" token will pop the top
+of the stack and print it.  Any other token will be parsed as a floating point
+number.  At input end, the top of the stack will be popped and printed.
+
+### Example
+```
+python rpn\_calc.py << EOM
+1 2 +
+EOM
+3.0
+```
