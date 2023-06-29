@@ -14,16 +14,16 @@ class Stack:
         '''
         Initialise the stack.
         '''
-        self.theStack: List[Any] = []
+        self.the_stack: List[Any] = []
 
     def push(self, item: Any) -> None:
         '''
         Push an item onto the stack.
         '''
-        self.theStack.append(item)
+        self.the_stack.append(item)
 
     def pop(self) -> Any:
         '''
         Pop an item off the stack.
         '''
-        return self.theStack.pop()
+        return self.the_stack.pop()
