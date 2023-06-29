@@ -31,14 +31,17 @@ EOM
 
 ---
 
-# ICCS Summer School '23: Using Git & GitHub effectively
-## 2023-06-19: planning meeting
+## Meta
+  * Worksheet (Google Docs)
+    https://docs.google.com/document/d/1gB2h9SNn5ZnAlvUE7mfG1lUDUUQmFyPYHiTyxIFJsKM/edit?usp=sharing
+
+### 2023-06-19: planning meeting
   * Paul: "Here's an existing repo that needs work. Let's perform a quick code
     review and prepare an issue board: fix major bug, add license, add CI"
   * Dom: "new title: Using GitHub effectively for collaborative development"
   * Simon: "behind the scenes, fork repo -> PR"
 
-### Post-meeting meeting
+#### Post-meeting meeting
 Simon is going to write a Reverse Polish Notation (RPN) calculator in Python. It will be lacking in a few respects enabling us to introduce the code via code review, identify pre-known issues and (in a well rehearsed way) fix the problems live, motivating the rest of the session and providing an overall outline for the talk. 
 
 During the code review we will identify issues and create a mini project board. We will then tackle the tasks on the list until the time runs out. We could structure this list for increasing complexity with the more optional information in the second or third issue. It is unlikely that we will complete the list (that is not the goal).
