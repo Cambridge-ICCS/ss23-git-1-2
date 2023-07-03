@@ -1,38 +1,35 @@
-name: CI
+# This is a GitHub Actions workflow file which instructs GitHub what commands to
+# run on a "fresh" machine (a cloud-provisioned worker) and when (e.g. when a
+# branch is updated).
+
+name: pytest
 
 on:
-  # run on every push to main
+  # execute this workflow on every push to main
   push:
     branches:
     - main
-  # run on every push (not commit) to a PR, plus open/reopen
+  # also execute this workflow on every push to any PR
   pull_request:
     types:
     - synchronize
-    - opened
-    - reopened
 
 jobs:
   linux-test:
-    name: ${{ matrix.os }} / test / Python ${{ matrix.python-version }}
-    runs-on: ${{ matrix.os }}
+    name: Ubuntu / test
+    runs-on: ubuntu-latest
 
-    strategy:
-      # continue testing other configurations even if a matrix job fails
-      fail-fast: false
-      matrix:
-        os: ["ubuntu-latest"]
-        python-version: ["3.11"]
-
+    # run the following steps in order
+    # if any step fails, the workflow halts and fails
     steps:
-    - uses: actions/checkout@v3
-    - name: Set up Python ${{ matrix.python-version }}
+    - name: Checkout Git repo and change directory
+      uses: actions/checkout@v3
+
+    - name: Install Python
       uses: actions/setup-python@v4
       with:
-        python-version: ${{ matrix.python-version }}
+        python-version: 3.11
 
     - run: pip install pytest
 
-    - name: Run tests
-      if: always()
-      run: pytest .
+    - run: pytest .
