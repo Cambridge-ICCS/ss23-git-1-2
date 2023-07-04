@@ -46,8 +46,8 @@ class Calculator:
                 print(token)
                 return token
             case "%":
-                self.theStack.push(
-                    self.theStack.pop() % self.theStack.pop()
+                self.the_stack.push(
+                    self.the_stack.pop() % self.the_stack.pop()
                 )
             case _:
                 self.the_stack.push(float(token))
