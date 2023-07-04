@@ -14,3 +14,8 @@ def test_prod():
 def test_subtract():
     commands = ['2.0', '1.0', '-']
     assert main(commands) == -1.0
+
+
+def test_modulo():
+    commands = ['3.0', '10.0', '%']
+    assert main(commands) == 1.0
