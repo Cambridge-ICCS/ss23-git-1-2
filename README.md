@@ -11,6 +11,11 @@ tokens are currently `"+", "-", "*", "/", "p"`.  The "p" token will pop the top
 of the stack and print it.  Any other token will be parsed as a floating point
 number.  At input end, the top of the stack will be popped and printed.
 
+The operators function by popping the top two elements from the stack, performing
+the operation and pushing the result back, as demonstrated in this picture:
+
+![Image](/rpn-calc/docs/oper-order.png)
+
 ## Installation (including running `pytest`)
 ```
 git clone https://github.com/Cambridge-ICCS/ss23-git.git
