@@ -3,9 +3,10 @@
 # Run in repo root directory
 # Manual steps:
 #   1. create (empty) repo on GH
-#   2. initialize local repo
-#   3. add remote
-#   4. copy over code, readme
+#   2. set access in settings
+#   3. initialize local repo
+#   4. add remote
+#   5. copy over code, readme
 
 # EXPECTATIONS: main branch
 part_init() {
@@ -31,6 +32,11 @@ part_ci_pr() {
 
 Triggers on every commit to main, and every PR sync.
 "
+    git push -u origin ci-more-tests
+
+    # MANUAL: Go and create the PR. We need to do the commits separately for the
+    # CI to run. If you do it wrong, make some change (a nothing change is fine,
+    # just update the commit hash) and force push.
 
     echo "
 
@@ -43,7 +49,7 @@ def test_subtract():
 
 Test currently failing."
 
-    git push -u origin ci-more-tests
+    git push
 }
 
 part_integer_mode() {
